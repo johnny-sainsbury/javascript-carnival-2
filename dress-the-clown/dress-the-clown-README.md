@@ -16,10 +16,10 @@ We are going to write some `JavaScript functions` and bind them to the arrow key
 
 #### Resources
 
-[Getting an Element by ID](https://www.w3schools.com/jsref/met_document_getelementbyid.asp)\
-[Concat Strings in Javascript](https://www.w3schools.com/jsref/jsref_concat_string.asp)\
-[KeyboardEvent Documentation](https://www.w3schools.com/jsref/event_key_keycode.asp)\
-[Detect Keycodes!](https://keycode.info/)
+* [Getting an Element by ID](https://www.w3schools.com/jsref/met_document_getelementbyid.asp)
+* [Concat Strings in Javascript](https://www.w3schools.com/jsref/jsref_concat_string.asp)
+* [KeyboardEvent `code` Documentation](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code)
+* [Detect Keycodes!](https://keycode.info/)
 
 ## Time to Dress The Clown!
 
@@ -29,7 +29,7 @@ Let's get started.
 
 Before trying to get the whole body working, lets focus on just one part.
 
-2. We can start in `dress-the-clown.js` by writing a function that can change the *head* image of the clown. The function might be called something like `changeClownHead`.  
+2. We can start in `dress-the-clown.js` by writing a function that can change the *head* image of the clown. The function might be called something like `changeClownHead`.
 
 3. You'll need a way to get a _reference_ to the head image element and save it to a variable so we can then change it. A good way of doing this might be to give the `<img>` html tag an ID, such as `id="head"`. We can then use JavaScript to [get an element by its ID](https://www.w3schools.com/jsref/met_document_getelementbyid.asp).
 
@@ -59,7 +59,7 @@ var headSrc = "./images/head" + headIndex + ".png"
 
 In order to test whether the function is working, you'll have to be able to call it over and over again. This is where the arrow keys start to come in! 
 
-9. We want to use the right arrow key to call the function, so it's time to do some googling. Something along the lines of "call a function with arrow keys javascript" should do it. (Spoiler alert: you will likely need to figure out what the "keycode" for the right arrow key is. Try using this tool [Detect Keycodes!](https://keycode.info/)).
+9. We want to use the right arrow key to call the function, so it's time to do some googling. Something along the lines of "call a function with arrow keys javascript" should do it. (Spoiler alert: you will likely need to figure out what the `code` (or `key`) for the right arrow key is. Try using this tool [Detect Keycodes!](https://keycode.info/)). _Note: `keycode` is also a property on keyboard events, and you may see it mentioned in searches, but it has been deprecated (i.e. don't use it! Stick with `code` instead.)_
 
 You should now be able to use the right arrow key to move between different head images. However, there is an issue. If your `headIndex` variable increases _higher_ than the number of head images available, everything breaks. How could you change your code to prevent this? 
 
@@ -69,7 +69,7 @@ Okay so that problem solved, now lets refactor your code again to allow for togg
 
 11. This functionality will be almost identical, but now your `headIndex` variable needs to _decrease_ rather than increase. In order to avoid re-creating that same bug from before, you will now also need to check and make sure the index doesn't fall _below zero_. 
 
-You should now have a fully functioning Put A Clown In Different Hats Simulator. The next step is going to be using the up and down arrow keys to *toggle between the different body parts*.  
+You should now have a fully functioning Put A Clown In Different Hats Simulator. The next step is going to be using the up and down arrow keys to *toggle between the different body parts*.
 
 12. You're going to need another index that keeps track of which body part you are currently selecting clothing for. Something along the lines of `var clothingIndex = 0`. The index will correspond to the different body parts: `0 = head, 1 = body, 2 = feet`. Write some code that allows you to *use the up and down arrow keys to increase and decrease the clothingIndex variable*, and to make sure it doesn't go too high or low. For now you could `console.log` this number to make sure it's working.
 
@@ -79,17 +79,6 @@ Now comes the part where we bring all the pieces together.
 
 Once that's working, you're done! Push your code up to github and you can dress the clown to your heart's content! Awesome job!
 
-## Reflection
-
-Open `my-reflections-sprint-5.md` in VS Code, add a `Dress a Clown` heading, and add the following reflection questions from this challenge.
-
-- How did you find the process of refactoring your code? 
-
-- Would you do anything differently if you were to start this challenge again?
-
-- What piece of code are you proudest of from this exercise? 
-
-Commit and push to GitHub.
 
 ## Stretch
 
