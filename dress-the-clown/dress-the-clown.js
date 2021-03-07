@@ -4,9 +4,9 @@
 
 console.log("Dress The Clown!")
 
-var headStr1 = '"./images/head';
+var headStr1 = './images/head';
 var headIndex = 0;
-var headStr2 = '.png"'
+var headStr2 = '.png';
 
 function changeClownHead() {
   headIndex++;
@@ -15,6 +15,6 @@ function changeClownHead() {
   headImg.src = headSrc;
 }
 
-changeClownHead;
+changeClownHead();
 
 console.log(changeClownHead)
